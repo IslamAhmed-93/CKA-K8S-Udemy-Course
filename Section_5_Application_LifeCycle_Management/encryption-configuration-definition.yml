@@ -1,0 +1,12 @@
+---
+apiVersion: apiserver.config.k8s.io/v1
+kind: EncryptionConfiguration
+resources:
+  - resources:
+      - secrets
+    providers:
+      - aescbc:
+          keys:
+            - name: key1
+              secret: <BASE 64 ENCODED SECRET> #this value can be generated using this command : [head -c 32 /dev/urandom | base64]
+      - identity: {} # REMOVE THIS LINE
