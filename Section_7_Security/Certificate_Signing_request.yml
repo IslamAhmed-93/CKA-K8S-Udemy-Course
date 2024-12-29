@@ -1,0 +1,11 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: jane
+spec:
+  expirationSeconds: 600 #seconds
+  usages:
+  - digital signature
+  - key encipherment
+  - server auth
+  request: $(cat server.csr | base64 | tr -d '\n')
