@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: private-registery.io/apps/internal-app
+  imagePullSecrets:
+  - name: regcred
+
+--------------
+kubectl create secret docker-registery regcred\
+    --docker-server= private-registery.io    \
+    --docker-username= registery-user    \
+    --docker-password= registery-password    \
+    --docker-email= registery-user@org.com   \
