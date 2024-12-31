@@ -13,6 +13,10 @@ spec:
     - podSelector:
         matchLabels:
           role: api-pod
+      namespaceSelector:
+        matchLabels:
+          role: prod
+      
     ports:
     - protocol: TCP
       port: 3306
