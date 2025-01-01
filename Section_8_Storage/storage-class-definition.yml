@@ -1,5 +1,8 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: google-storage
-provisioner: kubernetes.io/gce-pd
+  name: example-vol-default
+provisioner: vendor-name.example/magicstorage
+parameters:
+  type: pd-standard
+  replication-type: none
