@@ -3,6 +3,6 @@ kind: Ingress
 metadata:
   name: ingress-wear
 spec:
- bakend:
+ backend:
     serviceName: wear-service
     servicePort: 80
