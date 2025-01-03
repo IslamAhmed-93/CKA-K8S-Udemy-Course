@@ -14,4 +14,4 @@ spec:
       nodePort: TCP
       name: https
   selector:
-    app.kubernetes.io/name: nginx-ingress
+    name: nginx-ingress
